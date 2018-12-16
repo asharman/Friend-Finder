@@ -5,111 +5,130 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Friend Finder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+
     <link rel="stylesheet" type="text/css" media="screen" href="#" />
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <h1>Survey:</h1>
-    <form>
-      <h3>Name(required)</h3>
-      <input id="name" name="name" type="text" />
+    <div class="container">
+      <h1>Survey:</h1>
+      <br /><br /><br />
+      <form>
+        <h3>Name(required)</h3>
+        <input class="form-control mb-3" id="name" name="name" type="text" />
 
-      <h3>Link to Photo (required)</h3>
-      <input id="photo" name="photo" type="text" />
+        <h3>Link to Photo (required)</h3>
+        <input class="form-control mb-3" id="photo" name="photo" type="text" />
 
-      <p>Question 1</p>
-      <select class="question" name="question1">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <p>Question 2</p>
-      <select class="question" name="question2">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <p>Question 3</p>
-      <select class="question" name="question3">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <p>Question 4</p>
-      <select class="question" name="question4">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <p>Question 5</p>
-      <select class="question" name="question5">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <p>Question 6</p>
-      <select class="question" name="question6">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <p>Question 7</p>
-      <select class="question" name="question7">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <p>Question 8</p>
-      <select class="question" name="question8">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <p>Question 9</p>
-      <select class="question" name="question9">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <p>Question 10</p>
-      <select class="question" name="question10">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <br /><br />
-      <button id="submitButton">Submit</button>
-    </form>
+        <label>I believe art is important.</label>
+        <select class="form-control question mb-3" name="question1">
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <label>I love large parties.</label>
+        <select class="form-control question mb-3" name="question2">
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <label>I prefer variety to routine.</label>
+        <select class="form-control question mb-3" name="question3">
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <label>I am easy to satisfy.</label>
+        <select class="form-control question mb-3" name="question4">
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <label>I like order.</label>
+        <select class="form-control question mb-3" name="question5">
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <label>I am afraid that I will do the wrong thing.</label>
+        <select class="form-control question mb-3" name="question6">
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <label>I seek adventure.</label>
+        <select class="form-control question mb-3" name="question7">
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <label>I choose my words with care.</label>
+        <select class="form-control question mb-3" name="question8">
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <label>I stick to my chosen path.</label>
+        <select class="form-control question mb-3" name="question9">
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <label>I value cooperation over competition.</label>
+        <select class="form-control question mb-3" name="question10">
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br /><br />
+        <button id="submitButton">Submit</button>
+      </form>
+    </div>
     <script type="text/javascript">
       console.log("working");
 
       $("#submitButton").on("click", e => {
         e.preventDefault();
-        alert("Click");
         let newFriend = {
           name: $("#name")
             .val()
@@ -128,8 +147,6 @@
         $.post("/api/friends", newFriend, response => {
           if (response) {
             console.log(response);
-          } else {
-            alert("Issue");
           }
         });
       });
