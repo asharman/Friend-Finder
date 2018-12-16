@@ -6,19 +6,23 @@
     <title>Friend Finder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="#" />
-    <script src="#"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <h1>Survey:</h1>
     <form>
       <h3>Name(required)</h3>
-      <input name="name" type="text" />
+      <input id="name" name="name" type="text" />
 
       <h3>Link to Photo (required)</h3>
-      <input name="photo" type="text" />
+      <input id="photo" name="photo" type="text" />
 
       <p>Question 1</p>
-      <select name="question1">
+      <select class="question" name="question1">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -26,7 +30,7 @@
         <option value="5">5</option>
       </select>
       <p>Question 2</p>
-      <select name="question2">
+      <select class="question" name="question2">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -34,7 +38,7 @@
         <option value="5">5</option>
       </select>
       <p>Question 3</p>
-      <select name="question3">
+      <select class="question" name="question3">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -42,7 +46,7 @@
         <option value="5">5</option>
       </select>
       <p>Question 4</p>
-      <select name="question4">
+      <select class="question" name="question4">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -50,7 +54,7 @@
         <option value="5">5</option>
       </select>
       <p>Question 5</p>
-      <select name="question5">
+      <select class="question" name="question5">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -58,7 +62,7 @@
         <option value="5">5</option>
       </select>
       <p>Question 6</p>
-      <select name="question6">
+      <select class="question" name="question6">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -66,7 +70,7 @@
         <option value="5">5</option>
       </select>
       <p>Question 7</p>
-      <select name="question7">
+      <select class="question" name="question7">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -74,7 +78,7 @@
         <option value="5">5</option>
       </select>
       <p>Question 8</p>
-      <select name="question8">
+      <select class="question" name="question8">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -82,7 +86,7 @@
         <option value="5">5</option>
       </select>
       <p>Question 9</p>
-      <select name="question9">
+      <select class="question" name="question9">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -90,13 +94,43 @@
         <option value="5">5</option>
       </select>
       <p>Question 10</p>
-      <select name="question10">
+      <select class="question" name="question10">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
+      <br /><br />
+      <button id="submitButton">Submit</button>
     </form>
+    <script type="text/javascript">
+      console.log("working");
+
+      $("#submitButton").on("click", e => {
+        e.preventDefault();
+        alert("Click");
+        let newFriend = {
+          name: $("#name")
+            .val()
+            .trim(),
+          image: $("#photo")
+            .val()
+            .trim(),
+          scores: []
+        };
+        for (question of document.getElementsByClassName("question")) {
+          newFriend.scores.push(parseInt(question.value));
+        }
+
+        $.post("/api/friends", newFriend, response => {
+          if (response) {
+            console.log(response);
+          } else {
+            alert("Issue");
+          }
+        });
+      });
+    </script>
   </body>
 </html>

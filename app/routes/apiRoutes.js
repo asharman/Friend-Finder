@@ -7,6 +7,7 @@ module.exports = app => {
 
   app.post("/api/friends", (req, res) => {
     friendData.push(req.body);
-    res.send("Hooman added");
+    
+    res.json(req.body);
   });
 };
