@@ -121,9 +121,32 @@
           <option value="5">5 (Strongly Agree)</option>
         </select>
         <br /><br />
-        <button id="submitButton">Submit</button>
+        <button id="submitButton" class="btn btn-primary">Submit</button>
       </form>
     </div>
+
+    <div id="friendModal" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Your perfect friend is...</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h3><span id="friendName"></span></h3>
+            <img id="friendPhoto" src="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script type="text/javascript">
       console.log("working");
 
@@ -142,12 +165,10 @@
           newFriend.scores.push(parseInt(question.value));
         }
 
-        console.log(newFriend);
-
-        $.post("/api/friends", newFriend, response => {
-          if (response) {
-            console.log(response);
-          }
+        $.post("/api/friends", newFriend).then(response => {
+          $("#friendName").text(`${response.name}!`);
+          $("#friendPhoto").attr("src", `${response.image}`);
+          $("#friendModal").modal("show");
         });
       });
     </script>
