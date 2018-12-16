@@ -123,6 +123,8 @@
           newFriend.scores.push(parseInt(question.value));
         }
 
+        console.log(newFriend);
+
         $.post("/api/friends", newFriend, response => {
           if (response) {
             console.log(response);
